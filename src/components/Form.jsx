@@ -11,7 +11,6 @@ const Form = ({addTodo}) => {
       return
     }
     addTodo(value)
-    alert(value)
     setValue("")
   }
   return(
