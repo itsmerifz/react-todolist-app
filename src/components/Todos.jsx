@@ -12,7 +12,7 @@ const Todos = () =>{
     {
       text: "Test Vue"
     }
-  ]
+  ];
   return(
     <section className="todos">
       {todos.map(todo =>{
