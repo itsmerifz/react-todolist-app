@@ -1,9 +1,9 @@
 import "./styles.css";
-
+import React from 'react';
+import Paper from './components/Paper';
 export default function App() {
   return (
-    <div className="container">
-      <div className="frame">
+        <Paper>
           <section className="header">
               <button className="header-btn hitam">Add</button>
               <h1 className="header-title">Todo Lists</h1>
@@ -31,7 +31,6 @@ export default function App() {
               <span className="todo-txt">ss</span>
             </div>
           </section>
-      </div>
-    </div>
+        </Paper>
   );
 }
