@@ -11,6 +11,9 @@ const TodoList = () =>{
     {text: "Belajar Angular"}
   ])
 
+  const [showAdd,setShowAdd] = useState(false)
+  const showAddToggle = () => setShowAdd(!showAdd)
+
   const addTodo = val =>{
     const addedTodo = [...todos, {text: val}]
     setTodos(addedTodo)
@@ -18,8 +21,8 @@ const TodoList = () =>{
 
   return (
         <Paper>
-          <Header />
-          <Form addTodo={addTodo}/>
+          <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+          <Form addTodo={addTodo} showAdd={showAdd} />
           <Todos todos={todos} />
         </Paper>
   );
