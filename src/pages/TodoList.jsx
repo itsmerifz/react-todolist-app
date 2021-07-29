@@ -6,16 +6,23 @@ import Todos from '../components/Todos';
 
 const TodoList = () =>{
   const [todos,setTodos] = useState([
-    {text: "Belajar React"},
-    {text: "Belajar Vue"},
-    {text: "Belajar Angular"}
+    {text: "Belajar React", isCompleted: false},
+    {text: "Belajar Vue", isCompleted: false},
+    {text: "Belajar Angular", isCompleted: false}
   ])
 
   const [showAdd,setShowAdd] = useState(false)
   const showAddToggle = () => setShowAdd(!showAdd)
 
   const addTodo = val =>{
-    const addedTodo = [...todos, {text: val}]
+    const addedTodo = [...todos, {text: val, isCompleted: false}]
+    setTodos(addedTodo)
+  }
+
+  const completeTodo = (index) =>{
+    const addedTodo = [...todos]
+    addedTodo[index].isCompleted = !addedTodo[index].isCompleted
+
     setTodos(addedTodo)
   }
 
@@ -23,7 +30,7 @@ const TodoList = () =>{
         <Paper>
           <Header showAddToggle={showAddToggle} showAdd={showAdd} />
           <Form addTodo={addTodo} showAdd={showAdd} />
-          <Todos todos={todos} />
+          <Todos todos={todos} completeTodo={completeTodo} />
         </Paper>
   );
 }
