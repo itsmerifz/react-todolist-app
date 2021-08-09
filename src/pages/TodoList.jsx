@@ -23,7 +23,7 @@ const TodoList = () =>{
     }
   }
 
-  const clearTodo = () => setTodos([])
+  const clearTodo = () => !showAdd && setTodos([])
 
   const completeTodo = (index) =>{
     const addedTodo = [...todos]
